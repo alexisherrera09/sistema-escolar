@@ -97,6 +97,23 @@ export const alumnos: Alumno[] = [
   },
 ];
 
+/** Usuarios demo si la clave quedó vacía o corrupta (permite probar login sin reset total). */
+export function ensureEscolarLoginDemoData(): void {
+  const readUsers = (): Usuario[] => {
+    try {
+      const raw = localStorage.getItem('escolar_usuarios')
+      if (!raw) return []
+      const p = JSON.parse(raw)
+      return Array.isArray(p) ? p : []
+    } catch {
+      return []
+    }
+  }
+  if (readUsers().length === 0) {
+    localStorage.setItem('escolar_usuarios', JSON.stringify(usuarios))
+  }
+}
+
 export function initializeData(): void {
   if (!localStorage.getItem('escolar_initialized')) {
     localStorage.setItem('escolar_configuracion', JSON.stringify(configuracion));
@@ -121,4 +138,5 @@ export function initializeData(): void {
     localStorage.setItem('escolar_initialized', 'true');
     console.log('✅ Datos semilla del sistema escolar inicializados');
   }
+  ensureEscolarLoginDemoData();
 }

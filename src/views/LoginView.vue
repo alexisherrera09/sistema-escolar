@@ -40,7 +40,18 @@
           </p>
         </form>
 
-        <div class="mt-8 flex justify-center">
+        <div class="mt-6 p-4 bg-primary-50 rounded-lg text-sm text-gray-800 border border-blue-100">
+          <p class="font-semibold mb-2 text-gray-900">Credenciales de prueba:</p>
+          <ul class="space-y-1 text-xs leading-relaxed text-gray-700">
+            <li>Director: director / director123</li>
+            <li>Coordinador: coordinador / coord123</li>
+            <li>Cajero: cajero / cajero123</li>
+            <li>Maestro: maestro3a / maestro123</li>
+            <li>Padre (portal familias): padre001 / padre123</li>
+          </ul>
+        </div>
+
+        <div class="mt-6 flex justify-center">
           <VersionInfo />
         </div>
       </div>

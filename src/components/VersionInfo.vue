@@ -1,5 +1,13 @@
 <template>
   <div :style="containerStyle" class="version-info-container">
+    <img
+      src="/ameinnovate-logo.png"
+      alt="AME Innovate"
+      class="ame-brand-logo"
+      width="160"
+      height="28"
+      loading="lazy"
+    />
     <span :style="versionBadgeStyle">
       <span class="hidden sm:inline">Versión: </span>{{ version }}
     </span>
@@ -83,6 +91,15 @@ const environmentBadgeStyle = computed(() => {
 </script>
 
 <style scoped>
+.ame-brand-logo {
+  height: 28px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
 .version-info-container {
   font-family: 'Encode Sans', sans-serif;
 }
